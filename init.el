@@ -97,7 +97,8 @@
 (use-package undo-tree
   :diminish
   :config
-  (global-undo-tree-mode 1))
+  (global-undo-tree-mode 1)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo/"))))
 
 (use-package pdf-tools
   :mode ("\\.pdf\\'" . pdf-view-mode)
@@ -164,6 +165,17 @@
   :config
   (setq ess-view-data-current-backend 'data\.table+magrittr)
   (setq ess-view-data-current-save-backend 'data\.table::fwrite))
+
+
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  ;; (setq lsp-keymap-prefix "C-c l")
+  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+         (R-mode . lsp)
+         ;; if you want which-key integration
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
 
 ;; (setq scheme-program-name "geiser")
 
@@ -292,7 +304,7 @@ process."
  '(ess-view-data-current-backend 'data\.table+magrittr)
  '(ess-view-data-current-save-backend 'data\.table::fwrite)
  '(package-selected-packages
-   '(geiser-guile ess-view-data hl-todo company ess pdf-tools undo-tree dashboard which-key counsel use-package nano-modeline magit gruvbox-theme doom-modeline))
+   '(lsp-mode geiser-guile ess-view-data hl-todo company ess pdf-tools undo-tree dashboard which-key counsel use-package nano-modeline magit gruvbox-theme doom-modeline))
  '(undo-tree-history-directory-alist '(("\".\"" . "\"~/.emacs.d/undo/"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
