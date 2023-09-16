@@ -1,7 +1,16 @@
-(setenv "PATH" (concat (getenv "PATH") ":/home/lucec/.local/bin"))
-(setq exec-path (append exec-path '("/home/lucec/.local/bin")))
+;; (setenv "PATH" (concat (getenv "PATH") ":/home/lucec/.local/bin"))
+;; (setq exec-path (append exec-path '("/home/lucec/.local/bin")))
+
+;; (setenv "PATH" (concat (getenv "PATH") ":/opt/homebrew/lib/python3.11/site-packages"))
+;; (setq exec-path (append exec-path '("/opt/homebrew/lib/python3.11/site-packages")))
+
+;; (setenv "PATH" (concat (getenv "PATH") ":/opt/homebrew/bin"))
+;; (setq exec-path (append exec-path '("/opt/homebrew/bin")))
+
+
 
 (use-package python
+;;  :interpreter ("/opt/homebrew/bin/python3" . python-mode)
   :config
   (add-hook 'python-hook (lambda ()
                            (setq
