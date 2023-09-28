@@ -6,6 +6,3 @@ org-mode
 
 (schemesrc "#+header: :session" n "#+name: " q n "#+begin_src scheme" n r n "#+end_src")
 
-
-
-
