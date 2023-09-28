@@ -77,3 +77,13 @@
 
 ;; Increase line spacing
 (add-hook 'org-mode-hook '(lambda () (setq-local line-spacing 4)))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((scheme . t)))
+
+(add-to-list 'org-structure-template-alist
+             '("S" . "#+header: :session\n#+begin_src scheme\n#+end_src"))
+(setq org-structure-template-alist
+      (assoc-delete-all "S" org-structure-template-alist))
+

@@ -1,0 +1,5 @@
+fundamental-mode ;; Available everywhere
+
+(today (format-time-string "%Y-%m-%d"))
+
+(coopersrc "#+begin_src " q n r n "#+end_src")
