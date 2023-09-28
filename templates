@@ -2,4 +2,10 @@ fundamental-mode ;; Available everywhere
 
 (today (format-time-string "%Y-%m-%d"))
 
-(coopersrc "#+begin_src " q n r n "#+end_src")
+org-mode
+
+(schemesrc "#+header: :session" n "#+name: " q n "#+begin_src scheme" n r n "#+end_src")
+
+
+
+
