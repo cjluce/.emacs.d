@@ -219,6 +219,10 @@
   ;;   foo bar), the elements after `l' will be inserted according to the
   ;;   usual rules.  This makes it possible to return several elements
   ;;   from one expression."
+  ;; (p FORM <NAME> <NOINSERT>) Like p described above, but FORM is evaluated.
+  ;; (FORM ...) Other Lisp forms are evaluated. Named fields are lexically bound.
+  ;; q Quits the containing template when jumped to.
+
 
   
   ;; Require trigger prefix before template name when completing.
@@ -262,3 +266,10 @@
   :init
   (global-corfu-mode))
 
+;; (use-package anzu
+;;   :init 
+;;   (global-anzu-mode +1)
+;;   ;; (define-key isearch-mode-map [remap isearch-query-replace]  #'anzu-isearch-query-replace)
+;;   ;; (define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp)
+;;   (define-key isearch-mode-map [remap query-replace]  #'anzu-query-replace)
+;;   (define-key isearch-mode-map [remap query-replace-regexp] #'anzu-query-replace-regexp))

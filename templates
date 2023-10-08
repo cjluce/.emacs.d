@@ -2,7 +2,11 @@ fundamental-mode ;; Available everywhere
 
 (today (format-time-string "%Y-%m-%d"))
 
+(cooper (p "Hello" blamo) n (s blamo))
+
+
 org-mode
 
-(schemesrc "#+header: :session" n "#+name: " q n "#+begin_src scheme" n r n "#+end_src")
+(schemesrc "#+header: :session" n "#+name: " q n "#+begin_src scheme" n r> n "#+end_src")
 
+(sicpsrc "#+header: :session" n "#+name: " q n "#+begin_src scheme :var data=imports" n r> n "#+end_src")
